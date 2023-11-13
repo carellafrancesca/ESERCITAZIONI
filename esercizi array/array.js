@@ -116,3 +116,15 @@ const livello20 = pokemons
     });
     // Il metodo filter per ottenere un nuovo array contenente solo i Pokémon con livello maggiore di 20 e quindi utilizzare il metodo map per estrarre i nomi da questo array
 console.log("I Pokemon con livello superiore a 20:", livello20);
+
+// Modifica il livello di "Charmander" a 25.
+const charmander = pokemons.find(function (pokemons){ 
+    return pokemons.nome === 'Charmander';
+});
+
+if(charmander){
+    charmander.livello = 25;
+    console.log("Livello di Charmander modificato:", charmander.livello);
+} else {
+    console.log("Pokemon non trovato");
+}

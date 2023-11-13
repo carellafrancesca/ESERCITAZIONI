@@ -26,3 +26,17 @@ function calculateResult(){
         display.value = "Errore";
     }
 }
+
+// ESERCIZIO EXTRA - NUMERI PARI / DISPARI
+
+const numeri = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const numeriPari = numeri.filter(function (numero){
+    return numero % 2 === 0;
+});
+
+const numeriDispari = numeri.filter(function (numero){
+    return numero % 2 !== 0;
+})
+
+console.log("Numeri pari:", numeriPari);
+console.log("Numeri dispari:", numeriDispari);
