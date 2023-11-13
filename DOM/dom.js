@@ -27,3 +27,19 @@ function aggiungiAlTitolo(){
     titolo.textContent = nuovoTitolo; // Il titolo precedente viene sostituito con il testo presente nel campo input
 }
 
+function removeListElement(){
+    const lista = document.getElementById("listElements");
+    const elementiSelezionati = lista.querySelectorAll('li');
+    // Itera su ciascun elemento <li> all'interno della lista
+    elementiSelezionati.forEach(function (elemento){
+        lista.removeChild(elemento); // Rimuovi l'elemento dalla lista
+    })
+}
+
+function calcolaSomma() {
+    // Ottieni il valore dell'input con id "numero1" e "numero2" e lo converte in un numero in virgola mobile utilizzando parseFloat
+    const numero1 = parseFloat(document.getElementById("numero1").value);
+    const numero2 = parseFloat(document.getElementById("numero2").value);
+    const somma = numero1 + numero2;
+    alert("La somma è: " + somma);
+}

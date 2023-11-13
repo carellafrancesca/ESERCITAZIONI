@@ -1,3 +1,7 @@
-#cambioTesto, #elementiLista, #testoNascosto, #testoColore, #modificaTitolo{
+#cambioTesto, #elementiLista, #testoNascosto, #testoColore, #modificaTitolo, #rimuoviElementi{
     margin-bottom: 20px;
+}
+
+#sommaNumeri{
+    margin-top: 20px;
 }
