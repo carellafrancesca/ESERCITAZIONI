@@ -33,14 +33,14 @@ public class AbbonatiService {
 		
 		System.out.println(ab);
 		abr.save(ab);
-		log.info(ab.getNome() + ab.getCognome() + "è iscritto");
+		log.info(ab.getNome() + ab.getCognome() + " " + "è iscritto");
 		return ab;
 		
 	}
 
-	public List<Abbonati> findAllAbbonati(){
-		System.out.println("Lista di tutti gli abbonati:");
-		return (List<Abbonati>) abr.findAll();
+	public List<Abbonati> findAllAbbonati() {
+	    System.out.println("Lista di tutti gli abbonati:");
+	    return (List<Abbonati>) abr.findAll();
 	}
 	
 	public Abbonati findAbbonatiById(Long id) {

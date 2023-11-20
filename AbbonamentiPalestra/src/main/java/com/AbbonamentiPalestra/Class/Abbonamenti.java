@@ -12,6 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -38,10 +39,13 @@ public class Abbonamenti {
 	@Enumerated(EnumType.STRING)
     private TipoAbbonamento tipo;
 	
-	public double getPrezzo() {
-	   return tipo.getPrezzo();
-	}
-	
+	@Column(name = "prezzo", nullable = false)
+	private double prezzo;
+
+    public double getPrezzo() {
+        return tipo.getPrezzo();
+    }
+
     @OneToOne
     @JoinColumn(name = "abbonato_id")
     private Abbonati abbonato;

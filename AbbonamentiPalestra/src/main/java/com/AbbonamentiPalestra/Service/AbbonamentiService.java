@@ -3,6 +3,7 @@ package com.AbbonamentiPalestra.Service;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,7 +36,9 @@ public class AbbonamentiService {
 	    LocalDate dataDiScadenza = calcolaDataScadenza(dataDiIscrizione, tipo);
         abt.setDataDiScadenza(dataDiScadenza);
 	    
-	    double prezzoAbbonamento = abt.getPrezzo();
+        // Calcola il prezzo dinamicamente e imposta il campo prezzo dell'oggetto Abbonamenti
+        double prezzoAbbonamento = abt.getPrezzo();
+        abt.setPrezzo(prezzoAbbonamento);
 	    
 	    System.out.println(abt);
 	    abtr.save(abt);
@@ -72,6 +75,42 @@ public class AbbonamentiService {
 		System.out.println("Abbonamento trovato!");
 		return abtr.findById(id).get();
 	}
+
+    public void modificaTipoAbbonamento(Long id, TipoAbbonamento nuovoTipo) {
+        Optional<Abbonamenti> abbonamentoOptional = abtr.findById(id);
+
+        if (abbonamentoOptional.isPresent()) {
+            Abbonamenti abbonamento = abbonamentoOptional.get();
+            
+            if (nuovoTipo != null) {
+                abbonamento.setTipo(nuovoTipo);
+            }
+
+            abtr.save(abbonamento);
+            log.info("Tipo di abbonamento modificato per l'abbonamento con ID: " + id);
+            
+        } else {
+            log.warn("Abbonamento non trovato con ID: " + id);
+        }
+    }
+
+    public void modificaTipoAttivita(Long id, TipoAttivita nuovaAttivita) {
+        Optional<Abbonamenti> abbonamentoOptional = abtr.findById(id);
+
+        if (abbonamentoOptional.isPresent()) {
+            Abbonamenti abbonamento = abbonamentoOptional.get();
+            
+            if (nuovaAttivita != null) {
+                abbonamento.setAttivita(nuovaAttivita);
+            }
+
+            abtr.save(abbonamento);
+            log.info("Tipo di attività modificato per l'abbonamento con ID: " + id);
+            
+        } else {
+            log.warn("Abbonamento non trovato con ID: " + id);
+        }
+    }
 	
 	public void deleteAbbonamentiById(Long id) {
 		System.out.println("Abbonamento annullato!");
