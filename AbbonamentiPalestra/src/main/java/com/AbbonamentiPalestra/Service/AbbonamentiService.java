@@ -24,6 +24,7 @@ public class AbbonamentiService {
 	Logger log = LoggerFactory.getLogger(AbbonamentiService.class);
 	
 	@Autowired AbbonamentiRepo abtr;
+	
 	@Autowired @Qualifier("abbonamenti") private ObjectProvider <Abbonamenti> abbonamentiProvider;
 	
 	public Abbonamenti registrazione(LocalDate dataDiIscrizione,TipoAttivita attivita, TipoAbbonamento tipo, Abbonati abbonato) {
@@ -71,10 +72,35 @@ public class AbbonamentiService {
 		return (List<Abbonamenti>) abtr.findAll();
 	}
 	
-	public Abbonamenti findAbbonamentyById(Long id) {
-		System.out.println("Abbonamento trovato!");
-		return abtr.findById(id).get();
+	public Abbonamenti findAbbonamentoById(Long id) {
+	    return abtr.findById(id)
+	            .orElseThrow(() -> new AbbonamentoNotFoundException("Abbonamento non trovato con ID: " + id));
 	}
+	
+	public class AbbonamentoNotFoundException extends RuntimeException {
+	    public AbbonamentoNotFoundException(String message) {
+	        super(message);
+	    }
+	}
+
+	public List <Abbonamenti> findAbbonamentiByTipo(TipoAbbonamento tipo) {
+		System.out.println("Tipologia di Abbonamenti:" + tipo);
+		return abtr.findByTipo(tipo);
+	}
+	
+	public List <Abbonamenti> findAbbonamentiByAttivita(TipoAttivita attivita) {
+		System.out.println("Tipologia di Attività:" + attivita);
+		return abtr.findByAttivita(attivita);
+	}
+	
+	public List<Abbonamenti> findAbbonamentiByNomeCognomeAbbonato(String nome, String cognome) {
+        List<Abbonamenti> abbonamenti = abtr.findByAbbonatoNomeAndAbbonatoCognome(nome, cognome);
+        if (abbonamenti.isEmpty()) {
+            // Gestisci il caso in cui non sono presenti abbonamenti per l'abbonato con il nome e cognome specificati
+            log.warn("Nessun abbonamento trovato per l'abbonato con nome: " + nome + " e cognome: " + cognome);
+        }
+        return abbonamenti;
+    }
 
     public void modificaTipoAbbonamento(Long id, TipoAbbonamento nuovoTipo) {
         Optional<Abbonamenti> abbonamentoOptional = abtr.findById(id);

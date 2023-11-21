@@ -48,6 +48,10 @@ public class AbbonatiService {
 		return abr.findById(id).get();
 	}
 	
+	public List<Abbonati> findAbbonatiByCittaDiNascita(String cittaDiNascita) {
+	    return abr.findByCittaDiNascita(cittaDiNascita);
+	}
+	
 	public void deleteAbbonatoById(Long id) {
 		System.out.println("Utente eliminato!");
 		abr.deleteById(id);
