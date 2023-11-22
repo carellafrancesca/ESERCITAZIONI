@@ -1,0 +1,50 @@
+.container-flex{
+  display: flex;
+  justify-content: space-between;
+  .container-left{
+    width: 55%;
+    background-color: lightgray;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .container-right{
+    height: 500px;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    h4{
+      margin-bottom: -5px;
+    }
+    #location, #number{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      #contacts{
+        font-size: large;
+      }
+    }
+    #email{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      a{
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+  .outro{
+    font-size: large;
+  }
+}
+
+#footer{
+  background-color: lightgray;
+  position:absolute;
+  width: 100%;
+  padding-left: 50px;
+  #footer-container{
+    display: flex;
+    flex-direction: row;
+  }
+}
