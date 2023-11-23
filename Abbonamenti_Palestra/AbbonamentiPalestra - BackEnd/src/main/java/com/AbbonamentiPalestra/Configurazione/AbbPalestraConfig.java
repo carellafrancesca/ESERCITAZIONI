@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Scope;
 
 import com.AbbonamentiPalestra.Class.Abbonamenti;
 import com.AbbonamentiPalestra.Class.Abbonati;
+import com.AbbonamentiPalestra.Class.UtenteAccesso;
 
 @Configuration
 @PropertySource("classpath:application.properties")
@@ -22,6 +23,12 @@ public class AbbPalestraConfig {
     @Scope("prototype")
     public Abbonamenti abbonamenti() {
         return new Abbonamenti();
+    }
+	
+	@Bean("utenteAccesso")
+    @Scope("prototype")
+    public UtenteAccesso utente() {
+        return new UtenteAccesso();
     }
 	
 }
