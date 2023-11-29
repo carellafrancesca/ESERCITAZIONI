@@ -108,3 +108,42 @@ const numberElements = [19, 63, 21, 105, 75, 123, 99, 8, 43, 34];
 sostituisciElemento(numberElements, 21, 27);
 console.log("Array con sostituzioni:", numberElements);
 
+// 7) Calcola la media degli elementi in un array.
+
+function calcolaMedia(arrayMedia){
+    if(arrayMedia.length === 0){
+        return 0;
+    }
+
+    // Utilizza il metodo reduce per sommare tutti gli elementi dell'array.
+    const somma = arrayMedia.reduce(function(accumulatore, elementoCorrente){
+       return accumulatore + elementoCorrente; 
+    }, 0);
+
+    // Calcola la media dividendo la somma per il numero totale di elementi.
+    const media = somma / arrayMedia.length;
+
+    return media;
+}
+
+const numeriMedia = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+const mediaTot = calcolaMedia(numeriMedia);
+
+console.log("Media degli elementi:", mediaTot);
+
+// 8) Scrivi una funzione che elimini i duplicati da un array.
+
+function rimuoviDuplicati(array){
+    const setUnici = new Set(array);
+    // Converte il Set in un array.
+    const arraySenzaDuplicati = Array.from(setUnici);
+
+    return arraySenzaDuplicati;
+}
+
+const numeriConDuplicati = [12, 64, 85, 109, 77, 3, 52, 52, 47, 99, 99, 117, 1, 33, 61, 61];
+const numeriSenzaDuplicati = rimuoviDuplicati(numeriConDuplicati);
+
+console.log("Array con duplicati:", numeriConDuplicati);
+console.log("Array senza duplicati:", numeriSenzaDuplicati);
+
