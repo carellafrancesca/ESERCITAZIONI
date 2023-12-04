@@ -46,6 +46,13 @@ public class AbbonamentiController {
 	    return abbonamentoService.findAbbonamentiByAttivita(attivita);
 	}
 	
+	@GetMapping("/abbonato/{nome}/{cognome}")
+	public List<Abbonamenti> getAbbonamentiByNomeCognomeAbbonato(
+	        @PathVariable String nome,
+	        @PathVariable String cognome) {
+	    return abbonamentoService.findAbbonamentiByNomeCognomeAbbonato(nome, cognome);
+	}
+	
 	@PutMapping("/{id}/tipo")
 	public void updateTipoAbbonamento (@PathVariable Long id, @RequestParam TipoAbbonamento tipo) {
 		abbonamentoService.modificaTipoAbbonamento(id, tipo);
@@ -54,13 +61,6 @@ public class AbbonamentiController {
 	@PutMapping("/{id}/attivita")
 	public void updateTipoAttivita(@PathVariable Long id, @RequestParam TipoAttivita attivita) {
 		abbonamentoService.modificaTipoAttivita(id, attivita);
-	}
-	
-	@GetMapping("/abbonato/{nome}/{cognome}")
-	public List<Abbonamenti> getAbbonamentiByNomeCognomeAbbonato(
-	        @PathVariable String nome,
-	        @PathVariable String cognome) {
-	    return abbonamentoService.findAbbonamentiByNomeCognomeAbbonato(nome, cognome);
 	}
 	
 	@DeleteMapping("/{id}")

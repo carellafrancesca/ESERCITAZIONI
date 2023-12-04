@@ -68,11 +68,12 @@ public class AbbonamentiService {
     }
 	
 	public List<Abbonamenti> findAllAbbonamenti(){
-		System.out.println("Lista di tutti gli abbonamenti:");
+		System.out.println("Lista di tutti gli abbonamenti.");
 		return (List<Abbonamenti>) abtr.findAll();
 	}
 	
 	public Abbonamenti findAbbonamentoById(Long id) {
+		System.out.println("Abbonamento:" + id);
 	    return abtr.findById(id)
 	            .orElseThrow(() -> new AbbonamentoNotFoundException("Abbonamento non trovato con ID: " + id));
 	}
@@ -84,12 +85,12 @@ public class AbbonamentiService {
 	}
 
 	public List <Abbonamenti> findAbbonamentiByTipo(TipoAbbonamento tipo) {
-		System.out.println("Tipologia di Abbonamenti:" + tipo);
+		System.out.println("Tipologia di Abbonamenti:" + " " + tipo);
 		return abtr.findByTipo(tipo);
 	}
 	
 	public List <Abbonamenti> findAbbonamentiByAttivita(TipoAttivita attivita) {
-		System.out.println("Tipologia di Attività:" + attivita);
+		System.out.println("Tipologia di Attività:" + " " + attivita);
 		return abtr.findByAttivita(attivita);
 	}
 	
@@ -99,6 +100,7 @@ public class AbbonamentiService {
             // Gestisci il caso in cui non sono presenti abbonamenti per l'abbonato con il nome e cognome specificati
             log.warn("Nessun abbonamento trovato per l'abbonato con nome: " + nome + " e cognome: " + cognome);
         }
+        System.out.println("Abbonamento di :" + " " + nome + " " + cognome);
         return abbonamenti;
     }
 
