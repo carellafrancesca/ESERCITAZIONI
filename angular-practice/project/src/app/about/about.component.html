@@ -20,12 +20,15 @@
 
 <div class="container mt-4">
   <h2 class="mb-4">About Us</h2>
-
-  <p>Welcome to our website! We are a passionate team of individuals dedicated to bringing you the best in [your field or industry]. Our journey began with a shared vision: to create a platform that [describe the purpose or goal of your website].</p>
-
-  <p>At [Your Company Name], we believe in [core values or principles]. Our team of experts works tirelessly to deliver [describe your products or services] that exceed your expectations. We take pride in our commitment to [mention any unique aspects or qualities of your business].</p>
-
-  <p>What sets us apart is our unwavering dedication to [specific aspects of your business]. Whether you are a [type of customer], [Your Company Name] is here to [how you serve your customers].</p>
-
-  <p>Explore our website to learn more about our [products/services] and how we can [benefit your audience]. Feel free to reach out to us if you have any questions or if you'd like to [call-to-action, such as schedule a consultation, make a purchase, etc.].</p>
+  <p>Welcome to our website! We are a passionate team of individuals dedicated to bringing you the best in <span class="text-danger">{{ companyInfo.field }}</span>.
+  Our journey began with a shared vision: to create a platform that <span class="text-danger">{{ companyInfo.purpose }}</span>.</p>
+  <p>At [Your Company Name], we believe in <span class="text-danger">{{ companyInfo.coreValues }}</span>.
+  Our team of experts works tirelessly to deliver <span class="text-danger">{{ companyInfo.productsServices }}</span> that exceed your expectations.
+  We take pride in our commitment to <span class="text-danger">{{ companyInfo.commitment }}</span>.</p>
+  <p>What sets us apart is our unwavering dedication to <span class="text-danger">{{ companyInfo.dedication }}</span>.
+  Whether you are a [type of customer], [Your Company Name] is here to <span class="text-danger">{{ companyInfo.dedication }}</span>.</p>
+  <p>Explore our website to learn more about our <span class="text-danger">{{ companyInfo.productsServices }}</span>
+  and how we can <span class="text-danger">{{ companyInfo.callToAction }}</span>.
+  Feel free to reach out to us if you have any questions or if you'd like to <span class="text-danger">{{ companyInfo.callToAction }}</span>.</p>
 </div>
+

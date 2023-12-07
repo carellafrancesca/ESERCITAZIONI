@@ -28,6 +28,13 @@
   </form>
 </section>
 
+<form (submit)="submitForm()" class="mt-3" id="formUsername">
+  <label for="username" class="me-2">Username:</label>
+  <input type="text" id="username" [(ngModel)]="username" name="username" required>
+
+  <button type="submit">Submit</button>
+</form>
+
 <footer class="bg-light text-center p-3 mt-5">
   <p>&copy; 2023 Angular Homepage</p>
 </footer>

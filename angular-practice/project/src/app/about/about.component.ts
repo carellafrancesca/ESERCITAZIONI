@@ -11,4 +11,14 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class AboutComponent {
 
+  companyInfo = {
+    field: 'your field or industry',
+    purpose: 'describe the purpose or goal of your website',
+    coreValues: 'core values or principles',
+    productsServices: 'describe your products or services',
+    commitment: 'mention any unique aspects or qualities of your business',
+    dedication: 'specific aspects of your business',
+    callToAction: 'call-to-action, such as schedule a consultation, make a purchase, etc.'
+  };
+
 }
