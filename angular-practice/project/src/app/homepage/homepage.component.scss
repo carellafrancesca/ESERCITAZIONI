@@ -1,4 +1,35 @@
+#filterTitle{
+  font-size: large;
+}
+
 #formUsername{
   display: flex;
   justify-content: center;
+}
+
+.timer-container {
+  text-align: center;
+  margin-top: 20px;
+  #timerButtons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+.timer-animation {
+  font-size: 2em;
+  color: blue;
+  animation: timerAnimation 1s linear infinite;
+}
+
+@keyframes timerAnimation {
+  0% {
+    transform: scale(0.5);
+    color: blue;
+  }
+  100% {
+    transform: scale(1);
+    color: red;
+  }
 }
