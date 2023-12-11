@@ -12,7 +12,7 @@
         <a class="nav-link" routerLink="/about">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/contact">Contact</a>
+        <a class="nav-link" routerLink="/feedback">Feedback</a>
       </li>
     </ul>
   </div>
@@ -42,8 +42,8 @@
 </form>
 
 <div class="timer-container mt-4">
+  <h3>Timer</h3>
   <div [ngClass]="{'timer-animation': timerRunning}">
-    <h3>Timer</h3>
     <p>{{ timer }} seconds</p>
   </div>
 

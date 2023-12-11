@@ -3,11 +3,12 @@ import { AboutComponent } from '../about/about.component';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { FormsModule, NgModel } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FeedbackComponent } from '../feedback/feedback.component';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [AboutComponent, RouterLink, RouterOutlet, FormsModule, CommonModule],
+  imports: [AboutComponent, RouterLink, RouterOutlet, FormsModule, CommonModule, FeedbackComponent],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss'
 })
