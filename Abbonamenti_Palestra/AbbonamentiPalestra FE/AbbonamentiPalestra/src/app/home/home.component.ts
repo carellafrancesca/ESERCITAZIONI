@@ -19,16 +19,16 @@ export class HomeComponent implements OnInit{
   constructor(private tipiAttivitaService: AttivitaService) { }
 
   ngOnInit() {
-    this.caricaTipiAttivita();
+    //this.caricaTipiAttivita();
   }
 
-  caricaTipiAttivita() {
+  /*caricaTipiAttivita() {
     this.tipiAttivitaService.getTipiAttivita()
       .subscribe(response => {
         this.tipiAttivita = response;
       }, error => {
         console.log('Errore nel recupero dei dati');
       });
-  }
+  }*/
 
 }

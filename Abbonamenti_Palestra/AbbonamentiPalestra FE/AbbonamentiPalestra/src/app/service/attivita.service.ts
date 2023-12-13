@@ -11,8 +11,8 @@ export class AttivitaService {
 
   constructor(private http: HttpClient) { }
 
-  getTipiAttivita(): Observable<string[]>{
+  /*getTipiAttivita(): Observable<string[]>{
     return this.http.get<string[]>(this.attivitaUrl);
-  }
+  }*/
 
 }
