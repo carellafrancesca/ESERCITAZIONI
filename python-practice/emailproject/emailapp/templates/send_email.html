@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Email</title>
+</head>
+<body>
+    
+    <h3>Invia un'email</h3>
+
+    <form method="post" action="{% url 'send_email' %}">
+        {% csrf_token %} <!-- Il tag {% csrf_token %} in Django viene utilizzato per inserire un token di protezione CSRF (Cross-Site Request Forgery) all'interno di un form HTML. Questo è importante per proteggere il form da attacchi CSRF.-->
+
+        <!-- La sintassi {% url 'send_email' %} in Django viene utilizzata per generare un URL dinamico per una vista specifica.
+
+        Quando definisci le tue URL nel file urls.py del tuo progetto Django, puoi assegnare un nome a ciascuna vista usando l'attributo name. Quindi, quando vuoi collegarti a quella vista da un template, puoi utilizzare {% url 'nome_vista' %} per generare l'URL corrispondente.-->
+
+        <label for="{{ form.email.id_for_label }}">Destinatario:</label>
+        {{ form.email }}
+        <br>
+
+        <label for="{{ form.subject.id_for_label }}">Oggetto:</label>
+        {{ form.subject }}
+        <br>
+
+        <label for="{{ form.message.id_for_label }}">Messaggio:</label>
+        {{ form.message }}
+        <br>
+
+        <!-- dove c'è .id_for_label =>  l'attributo for nell'etichetta HTML label deve fare riferimento a questo ID in modo che gli utenti possano fare clic sull'etichetta per selezionare il campo associato. -->
+
+        <button type="submit">Invia Email</button>
+    </form>
+
+</body>
+</html>
