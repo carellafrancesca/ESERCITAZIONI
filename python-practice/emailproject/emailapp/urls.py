@@ -1,10 +1,12 @@
 from django.urls import path
 # importa la classe path dal modulo django.urls.
-from .views import send_email
+from .views import send_email, success, home
 #  La parte views di un'app Django è generalmente responsabile della logica di presentazione, gestendo le richieste HTTP e generando le risposte.
 
 urlpatterns = [
+    path('', home, name='home'),
     path('send_email/', send_email, name='send_email'),
+    path('success/', success, name='success'),
 ]
 
 # 'send_email/': Questa è la parte dell'URL che il framework cerca di corrispondere quando una richiesta viene fatta al tuo sito. 
