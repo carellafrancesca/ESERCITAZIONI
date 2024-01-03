@@ -34,3 +34,29 @@ condizione_not = not True
 
 print(somma, differenza, prodotto, divisione)
 print(condizione_and, condizione_or, condizione_not)
+
+# 3
+eta = 18
+if eta >= 18:
+    print("Sei maggiorenne")
+else:
+    print("Sei minorenne")
+
+# 4
+for i in range(5):
+    print(i)
+
+# for è una parola chiave che inizia il costrutto del ciclo for.
+# i è una variabile che rappresenterà ciascun elemento dell'iterabile (nel caso specifico, la sequenza generata da range(5)).
+# in è una parola chiave che specifica l'iterabile su cui verrà iterato (in questo caso, range(5)).
+# range(5) genera una sequenza di numeri da 0 a 4 (5 escluso). Quindi, il ciclo for itera su questi valori.
+    
+# 5
+contatore = 0
+while contatore < 3:
+    print("Iterazione:", contatore)
+    contatore += 1
+
+# while è una parola chiave che inizia il costrutto del ciclo while.
+# contatore < 3 è la condizione di controllo. Il ciclo while continuerà ad eseguire il suo blocco di codice finché questa condizione è vera.
+# contatore += 1: Incrementa il valore della variabile contatore di 1 ad ogni iterazione, in modo da evitare un ciclo infinito.
