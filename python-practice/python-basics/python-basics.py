@@ -1,6 +1,7 @@
-# Python è progettato per esser facile da leggere e scrivere. La sua sintassi è chiara e pulita, il che facilita la comprensione del codice. Inoltre supporta la programmazione procedurale, orientata ad oggetti e funzionale. 
-
-# Python offre una vasta gamma di librerie e framework che semplificano lo sviluppo.
+# Python è progettato per esser facile da leggere e scrivere. 
+# La sua sintassi è chiara e pulita, il che facilita la comprensione del codice. 
+# Inoltre supporta la programmazione procedurale, orientata ad oggetti e funzionale. 
+# Offre una vasta gamma di librerie e framework che semplificano lo sviluppo.
 
 # Comando da terminale: python nome.py (python python-basics.py)
 
