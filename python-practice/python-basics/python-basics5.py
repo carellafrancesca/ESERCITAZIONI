@@ -71,4 +71,3 @@ def unione_senza_duplicati(lista1, lista2):
 lista_a = [1, 2, 3, 4, 7, 8, 13, 17, 18, 20]
 lista_b = [3, 4, 5, 6, 8, 10, 12, 15, 17, 23]
 print(f"L'unione delle liste è: {unione_senza_duplicati(lista_a, lista_b)}")
-
