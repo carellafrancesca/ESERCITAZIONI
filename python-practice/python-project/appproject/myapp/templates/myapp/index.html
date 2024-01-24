@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista</title>
+</head>
+<body>
+    <h1>Lista</h1>
+    <ul>
+        {% for item in items %}
+            <li>{{ item.text }}</li>
+        {% endfor %}
+    </ul>
+
+    <form action="{% url 'add_item' %}" method="post">
+        {% csrf_token %}
+        <!-- Questo tag di template Django genera un campo del token CSRF. Il token CSRF è una misura di sicurezza per proteggere il tuo sito da attacchi CSRF (Cross-Site Request Forgery). Django richiede che questo token venga incluso in tutti i moduli HTML inviati tramite il metodo POST. -->
+
+        <input type="text" name="item_text" required>
+        <button type="submit">Aggiungi</button>
+    </form>
+</body>
+</html>
