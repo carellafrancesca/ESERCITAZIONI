@@ -11,6 +11,11 @@
         {% endfor %}
     </ul>
 
+    <form action="{% url 'search_items' %}" method="get">
+        <input type="text" name="query" placeholder="Cerca...">
+        <button type="submit">Cerca</button>
+    </form>
+
     <form action="{% url 'add_item' %}" method="post">
         {% csrf_token %}
         <!-- Questo tag di template Django genera un campo del token CSRF. Il token CSRF è una misura di sicurezza per proteggere il tuo sito da attacchi CSRF (Cross-Site Request Forgery). Django richiede che questo token venga incluso in tutti i moduli HTML inviati tramite il metodo POST. -->

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Risultati della Ricerca</title>
+</head>
+<body>
+    <h1>Risultati della Ricerca per "{{ query }}"</h1>
+    <ul>
+        {% for result in results %}
+            <li>{{ result.text }}</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="{% url 'index' %}">
+        <button type="button">Torna alla Home</button>
+    </a>
+</body>
+</html>

@@ -4,6 +4,7 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('add/', views.add_item, name='add_item'),
+    path('search/', views.search_items, name='search_items'),
 ]
 
 # In questa lista urlpatterns, stai associando percorsi specifici alle tue views. Ogni elemento della lista è una chiamata a path che definisce il percorso dell'URL, la view associata e un nome per l'URL.
