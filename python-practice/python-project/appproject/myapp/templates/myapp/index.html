@@ -2,26 +2,36 @@
 <html>
 <head>
     <title>Lista</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Lista</h1>
+    <h1 class="">Lista</h1>
     <ul>
         {% for item in items %}
             <li>{{ item.text }}</li>
         {% endfor %}
     </ul>
 
-    <form action="{% url 'search_items' %}" method="get">
-        <input type="text" name="query" placeholder="Cerca...">
-        <button type="submit">Cerca</button>
-    </form>
+    <div class="container">
+        <div class="row">
 
-    <form action="{% url 'add_item' %}" method="post">
-        {% csrf_token %}
-        <!-- Questo tag di template Django genera un campo del token CSRF. Il token CSRF è una misura di sicurezza per proteggere il tuo sito da attacchi CSRF (Cross-Site Request Forgery). Django richiede che questo token venga incluso in tutti i moduli HTML inviati tramite il metodo POST. -->
-
-        <input type="text" name="item_text" required>
-        <button type="submit">Aggiungi</button>
-    </form>
+            <div class="col-md-6">
+                <form action="{% url 'search_items' %}" method="get" class="d-flex">
+                    <input type="text" name="query" placeholder="Cerca..." class="form-control">
+                    <button type="submit" class="btn btn-dark ml-2">Cerca</button>
+                </form>
+            </div>
+    
+            <div class="col-md-6">
+                <form action="{% url 'add_item' %}" method="post" class="d-flex">
+                    {% csrf_token %}
+                    <input type="text" name="item_text" required class="form-control">
+                    <button type="submit" class="btn btn-dark ml-2">Aggiungi</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Questo tag di template Django genera un campo del token CSRF. Il token CSRF è una misura di sicurezza per proteggere il tuo sito da attacchi CSRF (Cross-Site Request Forgery). Django richiede che questo token venga incluso in tutti i moduli HTML inviati tramite il metodo POST. -->
 </body>
 </html>
