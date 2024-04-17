@@ -225,7 +225,7 @@ class Movie:
 class Cinema:
     def __init__(self):
         self.movie_list = []
-        self.bookings = {}
+        self.bookings = []
     
     def add_movie(self, movie):
         self.movie_list.append(movie)
@@ -243,7 +243,7 @@ class Cinema:
 
     def show_bookings(self):
         print("Prenotazioni:")
-        for movie_title, seats in self.bookings.items():
+        for movie_title, seats in self.bookings:
             print(f"Film: {movie_title}, Posti prenotati: {', '.join(seats)}")
 
 
