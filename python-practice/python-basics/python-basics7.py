@@ -31,7 +31,52 @@ class EventBookingSystem:
         for event in self.event_list:
             print(f"{event.name}, sarà il {event.event_date} e avrà come location {event.location}")
 
+# 2)
 
-    
+class ShoppingItem:
+    def __init__(self, name, quantity, price):
+        self.name = name
+        self.quantity = quantity
+        self.price = price
 
+class ShoppingList:
+    def __init__(self):
+        self.products = []
     
+    def add_to_chart(self, product):
+        for existing_product in self.products:
+            if existing_product.name == product.name:
+                # se l'articolo è già presente nel carrello, aggiorna la quantità e il prezzo
+                existing_product.quantity += product.quantity
+                existing_product.price += product.price 
+                return
+        self.products.append(product)
+    
+    def remove_from_chart(self, product_name):
+        for product in self.products:
+            if product.name == product_name:
+                if product.quantity > 1:
+                    product.quantity -= 1
+                else:
+                    self.products.remove(product)
+                return True
+        return False
+    
+    def show_chart(self):
+        for product in self.products:
+            print(f"{product.name}: Prezzo: {product.price}, Quantità: {product.quantity}")
+
+#list = ShoppingList()
+#item1 = ShoppingItem('Cuffie', 1, 90)
+#item2 = ShoppingItem('Cuffie', 1, 90)
+#item3 = ShoppingItem('Libro', 1, 10)
+#item4 = ShoppingItem('Microfono', 1, 150)
+#list.add_to_chart(item1)
+#list.add_to_chart(item2)
+#list.add_to_chart(item3)
+#list.add_to_chart(item4)
+#list.remove_from_chart(item2)
+#list.show_chart()
+
+# 3)
+

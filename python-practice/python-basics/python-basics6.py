@@ -158,6 +158,20 @@ class Project:
     def add_task(self, task):
         self.tasks.append(task)
     
+    def edit_task(self, task_name, new_status):
+        for task in self.tasks:
+            if task.name == task_name:
+                task.status = new_status
+                return True
+        return False
+    
+    def delete_completed_tasks(self, task_name):
+        for task in self.tasks:
+            if task.name == task_name:
+                self.tasks.remove(task)
+                return True
+        return False
+
     def show_task_list(self):
         print(f"Tasks per il progetto '{self.name}':")
         for task in self.tasks:

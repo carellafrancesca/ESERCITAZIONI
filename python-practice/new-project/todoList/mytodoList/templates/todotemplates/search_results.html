@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Risultati della Ricerca</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <h1 class="ml-2">Risultati della ricerca per "{{ query }}"</h1>
+    <ul>
+        {% for result in results %}
+            <li>{{ result.text }}</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="{% url 'index' %}">
+        <button type="button" class="btn btn-dark ml-2">Torna alla Home</button>
+    </a>
+</body>
+</html>
