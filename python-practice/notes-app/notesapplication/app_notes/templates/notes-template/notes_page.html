@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notes Creation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+    <h4 class="ml-2 mt-2"> Create Note: </h4>
+
+    <div class="ml-2 mt-2">
+        <form action="{% url 'create_note' %}" method="post">
+            {% csrf_token %}
+            <div>
+                <div style="margin: 20px;">
+                    <label for="title" class="font-weight-bold">Title:</label>
+                    <input type="text" id="title" name="title" required>                    
+                </div>
+                <div class="d-flex align-items-center" style="margin: 20px;">
+                    <label for="content" class="font-weight-bold" style="margin-right: 10px;">Content:</label><br>
+                    <textarea id="content" name="content" rows="4" cols="50" required></textarea>                    
+                </div>
+                <div style="margin: 20px;">
+                    <label for="category" class="font-weight-bold">Category:</label>
+                    <input type="text" id="category" name="category" required>                      
+                </div>                                         
+            </div>
+
+            <div class="d-flex justify-content-end" style="margin-right: 40px;">
+                <button pe="submit" class="btn btn-dark">Create Note</button>                
+            </div>
+
+        </form>
+    </div>
+
+    <div style="border: 1px black solid; margin: 15px"></div>
+
+    <h4 class="ml-2 mt-2"> Note List: </h4>
+
+    <div>
+
+        <div style="margin: 10px;">
+            <form action="" method="get" style="display: flex; justify-content: flex-end;">
+
+                <select name="category" style="margin-right: 5px;">
+                    <option value="">Tutte le Categorie</option>
+                    {% for category in categories %}
+                        <option value="{{ category.id }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select>
+                
+                <div>
+                    <button class="btn btn-dark">Filter</button>                
+                </div>
+
+            </form>
+        </div>
+
+
+        <div style="display: flex; flex-wrap: wrap; margin-left: 15px; margin-bottom: 15px;">
+            {% for note in notes %}
+                <div style="width: 50%; border: 1px solid black; border-radius: 20px; padding: 20px; font-size: 1.1em;">
+                    <div>
+                        <p><strong>Title:</strong><span style="text-decoration: underline; margin-left: 10px;">{{ note.title }}</span></p> 
+                        <p><strong>Content:</strong><span style="margin-left: 10px;">{{ note.content }}</span></p> 
+                        
+                        <div style="display: flex; justify-content: right; color: forestgreen;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                            </svg>
+                            <p>{{ note.category }} </p>                           
+                        </div>
+
+                    </div>
+
+                    <div style="display: flex; justify-content: end; margin-right: 100px;">
+                        <form action="{% url 'delete_note' note.pk %}" method="post" style="margin-right: 30px;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-dark">Delete</button>
+                        </form>              
+                        
+                        <form action="{% url 'edit_note' note.pk %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-dark">Edit Note</button>
+                        </form>
+                    </div>
+
+                </div>
+            {% endfor %}            
+        </div>
+
+    </div>
+
+    <!--{% for category in categories %}
+    <li>
+        {{ category.category_name }}
+        <form action="{% url 'delete_category' category.pk %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+    {% endfor %}-->
+
+
+</body>
+</html>

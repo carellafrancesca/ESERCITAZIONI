@@ -14,15 +14,14 @@ def add_item(request):
         return HttpResponseRedirect('/')
     
 #def delete_items(request):
-    
-    #if request.method == 'POST':
-    #    text_to_delete = request.POST['item_text'] # ottieni il testo dell'elemento da eliminare dalla richiesta POST
-    #    try: 
-    #        items_to_delete = ListItem.objects.get(text = text_to_delete)
-    #        items_to_delete.delete()
-    #    except ListItem.DoesNotExist: # controlla se l'elemento da cancellare esiste nella lista
-    #        pass
-    #return redirect('index')
+#    if request.method == 'POST':
+#        text_to_delete = request.POST['item_text'] # ottieni il testo dell'elemento da eliminare dalla richiesta POST
+#        items_to_delete = ListItem.objects.filter(text = text_to_delete).first()
+#        if items_to_delete:
+#            items_to_delete.delete()
+#        else: 
+#            print('Nessun elemento trovato')
+#    return redirect('index')
 
 def search_items(request):
     query = request.GET.get('query', '') # recupera il valore del parametro di query dalla stringa di query
