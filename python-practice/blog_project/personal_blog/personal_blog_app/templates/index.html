@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+
+        .card_container{
+            display: flex;
+            justify-content: center;
+            margin-top: 180px;
+        }
+        .register_login_card{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: 2px solid black;
+            height: 400px;
+            width: 450px;
+            border-radius: 15%;
+            background-color: white;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div>
+        {% if request.user.is_authenticated %}
+        <p> {{request.user.username}} </p>
+        <a href="{% url 'logout' %}"> Logout </a>
+        {% else %}        
+    </div>
+
+    <div class="card_container">
+        <div class="register_login_card">
+            <div>
+                <form action="{% url 'login' %}">
+                    <button type="submit" class="btn btn-info"> Login </button>                
+                </form>
+            </div>
+
+            <div>
+                <form action="{% url 'signup' %}">
+                    <button type="submit" class="btn btn-info"> Signup </button>
+                </form>
+            </div>
+            
+            {% endif %}        
+        </div>        
+    </div>
+
+</body>
+</html>

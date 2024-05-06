@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+
+        p{
+            font-weight: 600;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+            margin-left: 20px;
+            border: 1px solid black;
+            padding: 8px;
+            border-radius: 5px;
+        }
+        .login_page{
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
+        .login_button{
+            display: flex;
+            justify-content: center;
+            align-items: center;   
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h2 style="text-align: center;">Login</h2>
+
+    <div class="login_page">
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <div class="login_button">
+                <button type="submit" class="btn btn-info"> Login </button>
+                <a href="{% url 'signup' %}"> Don't have Account?</a>                
+            </div>
+
+        </form>        
+    </div>
+
+</body>
+</html>

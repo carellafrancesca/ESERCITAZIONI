@@ -59,7 +59,7 @@
 
         <div style="display: flex; flex-wrap: wrap; margin-left: 15px; margin-bottom: 15px;">
             {% for note in notes %}
-                <div style="width: 50%; border: 1px solid black; border-radius: 20px; padding: 20px; font-size: 1.1em;">
+                <div style="width: 50%; border: 1px solid black; border-radius: 20px; padding: 20px; font-size: 1.1em; height: fit-content;">
                     <div>
                         <p><strong>Title:</strong><span style="text-decoration: underline; margin-left: 10px;">{{ note.title }}</span></p> 
                         <p><strong>Content:</strong><span style="margin-left: 10px;">{{ note.content }}</span></p> 
@@ -68,7 +68,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
                                 <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
                             </svg>
-                            <p>{{ note.category }} </p>                           
+                            <p>{{ note.category }} </p>
                         </div>
 
                     </div>
@@ -83,6 +83,10 @@
                             {% csrf_token %}
                             <button type="submit" class="btn btn-dark">Edit Note</button>
                         </form>
+                    </div>
+
+                    <div style="color: gray;">
+                        <p>{{ note.publication_date }}</p>
                     </div>
 
                 </div>
