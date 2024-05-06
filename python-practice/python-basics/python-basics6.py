@@ -82,10 +82,21 @@ class Mazzo:
 # 3)
 
 class Book: 
-    def __init__(self, title, author, year):
+    def __init__(self, title, author, availability = True):
         self.title = title
         self.author = author
-        self.year = year
+        self.availability = availability
+    
+    def borrow_book(self):
+        if self.availability:
+            self.availability = False
+            print("Book borrowed successfully!")
+        else:
+            print("The book is not available")
+    
+    def return_book(self):
+        self.availability = True
+        print('You returned the book')
 
 class Library:
     def __init__(self):
@@ -94,23 +105,30 @@ class Library:
     def add_book(self, book):
         self.books.append(book)
     
-    def search_book(self, title):
+    def search_book(self, title, author):
         for book in self.books:
-            if book.title == title:
+            if book.title == title or book.author == author:
                 return book
         return None
     
     def show_books(self):
         print("Books in the library:")
         for book in self.books:
-            print(f"Title: {book.title}, Author: {book.author}, Year: {book.year}")
+            print(f"Title: {book.title}, Author: {book.author}, Availability: {book.availability}")
 
 #library = Library()
-#book1 = Book('Orgoglio e Pregiudizio', 'Jane Awsten', '1813')
-#book2 = Book('Il Ritratto di Dorian Gray', 'Oscar Wilde', '1890')
+#book1 = Book('Orgoglio e Pregiudizio', 'Jane Awsten')
+#book2 = Book('Il Ritratto di Dorian Gray', 'Oscar Wilde', availability = False)
+#book3 = Book('Persone Normali', 'Sally Rooney')
+#book4 = Book('Harry Potter', 'J.K.Rowlig', availability=False)
 #library.add_book(book1)
 #library.add_book(book2)
-#library.search_book('Orgoglio e Pregiudizio')
+#library.add_book(book3)
+#library.add_book(book4)
+#library.show_books()
+#book3.borrow_book()
+#library.show_books()
+#book3.return_book()
 #library.show_books()
 
 # 4)

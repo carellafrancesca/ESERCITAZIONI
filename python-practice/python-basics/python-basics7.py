@@ -238,4 +238,3 @@ def analizza_testo(testo):
 
 #testo = input('Inserisci il testo da analizzare:')
 #analizza_testo(testo)
-
