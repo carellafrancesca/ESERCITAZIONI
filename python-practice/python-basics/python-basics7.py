@@ -34,9 +34,9 @@ class EventBookingSystem:
         for event in self.event_list:
             print(f"{event.event_name}, sarà il {event.event_date} e avrà come location {event.location}")
 
-#booking = EventBookingSystem()
-#event1 = Event('Concerto dei Coldplay', '15/07/2024', 'Stadio Olimpico - Roma')
-#booking.add_event(event1)
+booking = EventBookingSystem()
+event1 = Event('Concerto dei Coldplay', '15/07/2024', 'Stadio Olimpico - Roma')
+booking.add_event(event1)
 #booking.book_a_seat('Concerto dei Coldplay', 5)
 #booking.show_event_list()
 
@@ -86,15 +86,15 @@ class ShoppingList:
         for product in self.products:
             print(f"{product.name}: Prezzo: {product.price}, Quantità: {product.quantity}")
 
-#list = ShoppingList()
-#item1 = ShoppingItem(1, 'Cuffie', 1, 90)
-#item2 = ShoppingItem(2, 'Computer', 1, 900)
-#item3 = ShoppingItem(3, 'Libro', 1, 15)
-#item4 = ShoppingItem(4, 'Cuffie', 1, 90)
-#list.add_to_chart(item1)
-#list.add_to_chart(item2)
-#list.add_to_chart(item3)
-#list.add_to_chart(item4)
+list = ShoppingList()
+item1 = ShoppingItem(1, 'Cuffie', 1, 90)
+item2 = ShoppingItem(2, 'Computer', 1, 900)
+item3 = ShoppingItem(3, 'Libro', 1, 15)
+item4 = ShoppingItem(4, 'Cuffie', 1, 90)
+list.add_to_chart(item1)
+list.add_to_chart(item2)
+list.add_to_chart(item3)
+list.add_to_chart(item4)
 #list.remove_from_chart(4)
 #total_price = list.calucate_total_price()
 #list.show_chart()
@@ -140,10 +140,10 @@ class Recipe_Book():
         for recipe in self.recipe_list:
             print(f"Piatto: {recipe.dish_name}, Ingredienti: {recipe.ingredients}, Tempo: {recipe.timing}")
         
-#recipe_book = Recipe_Book()
-#ingredients1 = ['250ml di Latte', '200g di Farina00', '65g di Zucchero', '1 Uovo', '1 cucchiaino di Lievito in polvere']
-#recipe1 = Recipe('Pancakes', ingredients1, '10')
-#recipe_book.add_recipe(recipe1)
+recipe_book = Recipe_Book()
+ingredients1 = ['250ml di Latte', '200g di Farina00', '65g di Zucchero', '1 Uovo', '1 cucchiaino di Lievito in polvere']
+recipe1 = Recipe('Pancakes', ingredients1, '10')
+recipe_book.add_recipe(recipe1)
 #recipe_book.show_recipe_list()
 
 # 4) 
@@ -184,13 +184,13 @@ class Phone_Book():
                 return True
         return False
     
-#phone_book = Phone_Book()
-#contact1 = PhoneNumber('Mario Rossi', '123456789')
-#contact2 = PhoneNumber('Giuseppe Verdi', '123456789')
-#contact3 = PhoneNumber('Maria Neri', '654321789')
-#phone_book.add_contact(contact1)
-#phone_book.add_contact(contact2)
-#phone_book.add_contact(contact3)
+phone_book = Phone_Book()
+contact1 = PhoneNumber('Mario Rossi', '123456789')
+contact2 = PhoneNumber('Giuseppe Verdi', '123456789')
+contact3 = PhoneNumber('Maria Neri', '654321789')
+phone_book.add_contact(contact1)
+phone_book.add_contact(contact2)
+phone_book.add_contact(contact3)
 #phone_book.edit_phone_number('Giuseppe Verdi', '987654321')
 #phone_book.delete_phone_number('Maria Neri')
 #phone_book.show_phone_book()

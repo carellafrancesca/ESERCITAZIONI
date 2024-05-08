@@ -196,3 +196,16 @@ tuple_num2 = (99, 88)
 tuple_numbers = (11, 22, 33, 44, 55, 66)
 #tuple_numbers_2 = tuple_numbers[3:-1]
 #print(tuple_numbers_2)
+
+tuple_nested_numbers = (11, [22, 33], 44, 55, 66)
+#tuple_nested_numbers[1][0] = 222
+#print(tuple_nested_numbers)
+
+tuple_multiple_num = (15, 8, 26, 31, 38, 15, 47, 51, 64, 15, 77, 81, 97, 15, 104)
+#print(tuple_multiple_num.count(15))
+
+##def check(t):
+#    return all(i == t[0] for i in t)
+
+#tuple_same_num = (45, 45, 45, 45)
+#print(check(tuple_same_num))
